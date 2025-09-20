@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+    rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    rel="stylesheet">
+
+</head>
+
+<body>
+
+  <div id="cursor"></div>
+
+  <div class="page-header">
+    <div class="logo">
+      <a href="#" data-hover-cursor>Hello World!</a>
+    </div>
+    <div class="nav-bar">
+      <a href="#" data-hover-cursor>Home</a>
+      <a href="#" data-hover-cursor>Projects</a>
+      <a href="#" data-hover-cursor>Contact</a>
+    </div>
+  </div>
+
+  <div class="hero-section">
+    <div class="text-section">
+      <h1 data-hover-cursor>Independant</h1>
+      <h1 data-hover-cursor>Front-End</h1>
+      <h1 data-hover-cursor>Web-Developper</h1>
+      <h1 data-hover-cursor>Located in France</h2>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("mousemove", function (event) {
+      const cursor = document.querySelector("#cursor");
+      const x = event.pageX - 10;
+      const y = event.pageY - 10;
+      cursor.style.left = x + "px";
+      cursor.style.top = y + "px";
+    });
+
+    const hoverElements = document.querySelectorAll("[data-hover-cursor]");
+
+    hoverElements.forEach(function (el) {
+      el.addEventListener("mouseover", function () {
+        document.querySelector("#cursor").style.transform = "scale(2)";
+      });
+
+      el.addEventListener("mouseleave", function () {
+        document.querySelector("#cursor").style.transform = "scale(1)";
+      });
+    });
+  </script>
+
+</body>
+
+</html>
