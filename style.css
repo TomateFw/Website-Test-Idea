@@ -1,0 +1,101 @@
+:root {
+    --background: #0a0a0a;
+    --snd-background: #131313;
+
+    --spinner-color: #101010;
+    --spinner-alpha: rgba(255, 255, 255, 0.05);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: none;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--background);
+    overflow: hidden;
+}
+
+#cursor {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    mix-blend-mode: difference;
+    pointer-events: none;
+    transition: transform .2s ease-in-out;
+    z-index: 10;
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2em 2em;
+    background-color: var(--background);
+    text-transform: uppercase;
+    border-bottom: solid 1px var(--snd-background);
+}
+
+.nav-bar a {
+    color: white;
+    text-decoration: none;
+    margin-left: 3.5em;
+    font-family: 'Inter';
+    font-weight: 300;
+}
+
+.logo a {
+    color: white;
+    text-decoration: none;
+    font-family: 'Inter';
+}
+
+.hero-section {
+    position: relative;
+    /* Ajouté pour contexte de positionnement */
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: radial-gradient(at 50% 100%, hsl(0, 0%, 15%) 0px, transparent 50%);
+}
+
+.text-section {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 2;
+    color: white;
+}
+
+.text-section h1,
+.text-section h2 {
+    font-family: 'Inter';
+    font-size: 8em;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+}
+
+.text-section :nth-child(1) {
+    margin-left: 15%;
+}
+
+.text-section :nth-child(3) {
+    margin-left: 15%;
+    width: 100%;
+}
+
+.text-section :nth-child(4) {
+    width: 100%;
+    margin-left: 85%;
+    font-size: 1rem;
+}
