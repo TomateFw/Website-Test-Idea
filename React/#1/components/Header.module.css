@@ -1,0 +1,43 @@
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.3rem 2rem;
+  font-family: "Inter", sans-serif;
+}
+.logo {
+  color: var(--primary-white);
+  text-decoration: none;
+  font-size: 1rem;
+}
+.nav-bar {
+  display: flex;
+  gap: 1.1rem;
+}
+.nav-bar a {
+  color: var(--primary-white);
+  text-decoration: none;
+  font-size: 1rem;
+}
+.underline-button {
+  position: relative;
+  padding: 4px 0;
+}
+
+.underline-button::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 1.25px;
+  width: 100%;
+  background-color: var(--primary-white);
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
+}
+
+.underline-button:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
